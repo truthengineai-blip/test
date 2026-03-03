@@ -6,45 +6,84 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-X889MYFV7L', { 'custom_map': {'dimension1': 'client_id'} });
+
+  gtag('config', 'G-X889MYFV7L', {
+    'custom_map': {'dimension1': 'client_id'}
+  });
   
+  // Auto-track the Asset ID from the URL
   const pathArray = window.location.pathname.split('/');
-  const assetId = pathArray[pathArray.length - 3] || '1419-buchanan';
+  const assetId = pathArray[pathArray.length - 3] || 'unknown_asset';
   gtag('event', 'silo_view', {'client_id': assetId});
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truth Engine: 1419 Buchanan St NW</title>
+    <title>Truth Engine: Neighborhood Dossier</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
     <style>
         .font-serif { font-family: 'Cormorant Garamond', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
+        
         :root {
-            --bg-color: #0A0A0A;
-            --accent-gold: #C5A059;
-            --accent-prestige: #FACC15;
+            --bg-color: #0A0A0A; /* Deep Onyx */
+            --accent-gold: #C5A059; /* Muted Champagne Gold */
+            --accent-prestige: #FACC15; /* High-vis Highlight */
             --text-main: #FFFFFF;
+            --text-muted: #A1A1AA;
             --card-border: rgba(197, 160, 89, 0.15);
         }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            background-image: radial-gradient(circle at 0% 0%, rgba(197, 160, 89, 0.03) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
         }
-        .prestige-border { border: 1px solid var(--card-border); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .prestige-border:hover { border-color: rgba(197, 160, 89, 0.4); background: rgba(255, 255, 255, 0.02); }
-        .text-auth { color: rgba(197, 160, 89, 0.4); font-family: monospace; letter-spacing: 0.15em; }
+
+        .prestige-border {
+            border: 1px solid var(--card-border);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .prestige-border:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); }
+
+        @keyframes subtleScale {
+            from { opacity: 0; transform: scale(0.99); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+        }
+
+        .text-auth { 
+    color: rgba(197, 160, 89, 0.4); /* Faded Gold */
+    font-family: monospace;
+    letter-spacing: 0.15em;
+}
+ 
         .animate-entrance { animation: subtleScale 1.2s ease-out forwards; }
-        @keyframes subtleScale { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
         .letter-spacing-luxury { letter-spacing: 0.3em; }
         .pulse-prestige { animation: pulse-gold 2s infinite; }
-        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); } 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); } }
+        
+        /* Coordinate-specific tracking */
         .tracking-geo { letter-spacing: 0.5em; }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
 
+    <!-- Header -->
     <header class="w-full py-8 px-10 flex justify-between items-center sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/5">
         <div class="flex items-center gap-4">
             <div class="w-10 h-10 border-t border-l border-[var(--accent-gold)] flex items-center justify-center">
@@ -55,113 +94,249 @@
         <div class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-light">Established MMXXV</div>
     </header>
 
+    <!-- Main Content -->
     <main class="flex-grow container mx-auto px-6 py-12 md:py-20 max-w-6xl">
+
+        <!-- Hero Section -->
         <section class="mb-24 text-center animate-entrance">
             <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
-            <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">1419 Buchanan St NW</h2>
+            <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
+                [ASSET_IDENTIFIER]
+            </h2>
             <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
             <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
                 <p class="text-white text-xs font-light tracking-widest uppercase italic">
-                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Master of the 16th Street Heights Plateau</span>
+                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">[ASSET_STATUS]</span>
                 </p>
             </div>
             <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-                "Settled into the high plateau of 16th Street Heights, where the transit heritage of DC meets the quietude of Rock Creek Park. This is more than a residence; it's an anchor in the most strategically positioned neighborhood in the District."
+                "[EXECUTIVE_SUMMARY_PLACEHOLDER]"
             </div>
         </section>
 
+        <!-- Navigation Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             <button onclick="switchTab('section1')" id="tab-section1" class="prestige-border p-10 text-center group border-[var(--accent-gold)]">
-                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">01 // History</span>
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Narrative</span>
                 <h3 class="font-serif text-2xl text-white">Bones & Origin</h3>
             </button>
             <button onclick="switchTab('section2')" id="tab-section2" class="prestige-border p-10 text-center group">
-                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">02 // Lifestyle</span>
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Lifestyle</span>
                 <h3 class="font-serif text-2xl text-white">Tactical Rotation</h3>
             </button>
             <button onclick="switchTab('section3')" id="tab-section3" class="prestige-border p-10 text-center group">
-                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">03 // Tactical Horizon</span>
-                <h3 class="font-serif text-2xl text-white">Seasonal Outlook</h3>
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Outlook</span>
+                <h3 class="font-serif text-2xl text-white">Seasonal Horizon</h3>
             </button>
         </div>
 
-        <div id="content-section1" class="content-section transition-all duration-700">
-            <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
-                <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
+        <!-- Content Area -->
+        <div class="bg-white/[0.01] border border-white/5 p-10 md:p-20 min-h-[500px] relative animate-entrance">
+            
+            <!-- Section 01: Narrative -->
+            <div id="content-section1" class="content-section transition-all duration-700">
+                <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
+                    <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
+                </div>
+                <div class="flex flex-col gap-20">
+    <div class="space-y-8">
+        <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Core Footprint</h4>
+        <div class="w-full max-w-2xl mx-auto py-16 bg-zinc-900/30 border border-white/5 flex flex-col items-center justify-center relative">
+            <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
+            
+            <div class="space-y-6 text-center">
+                <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                    <span id="lat-value">42.3584°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                </div>
+                <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                    <span id="lon-value">71.0621°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
+                </div>
             </div>
-            <div class="flex flex-col gap-20">
-                <div class="space-y-8">
-                    <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Core Footprint</h4>
-                    <div class="w-full max-w-2xl mx-auto py-16 bg-zinc-900/30 border border-white/5 flex flex-col items-center justify-center relative">
-                        <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
-                        <div class="space-y-6 text-center">
-                            <div class="text-white font-light tracking-geo text-xl md:text-3xl">38.9463° <span class="ml-4 text-[var(--accent-gold)]">N</span></div>
-                            <div class="text-white font-light tracking-geo text-xl md:text-3xl">77.0336° <span class="ml-4 text-[var(--accent-gold)]">W</span></div>
+
+            <div class="mt-16">
+                <span class="text-zinc-600 text-[9px] uppercase tracking-[0.5em] font-light">Precision Verified Data</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-y-8 max-w-3xl mx-auto">
+        <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
+        <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
+            <p class="text-zinc-400 font-serif text-2xl md:text-3xl leading-relaxed italic">
+                [CONTENT_BLOCK_PROTOTYPE_TEXT]
+            </p>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Section 02: Lifestyle Rotation -->
+            <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
+                <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
+                    <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
+                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">Radius Lockdown</span>
+                </div>
+                <div class="space-y-12">
+                    <div class="group py-4">
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE PRIME</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">[LIST_ITEM_TITLE_1]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                                [DETAILS_PLACEHOLDER_1]
+                            </div>
                         </div>
-                        <div class="mt-16 text-zinc-600 text-[9px] uppercase tracking-[0.5em] font-light">Precision Verified Data</div>
+                    </div>
+                    <div class="group py-4">
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE FOUNDATION</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">[LIST_ITEM_TITLE_2]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                                [DETAILS_PLACEHOLDER_2]
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-12 px-10 bg-[var(--accent-prestige)]/5 border-y border-[var(--accent-prestige)]/20 relative overflow-hidden pulse-prestige">
+                        <div class="absolute top-0 right-0 p-4">
+                            <div class="w-2 h-2 rounded-full bg-[var(--accent-prestige)] animate-pulse"></div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret</span>
+                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">[LIST_ITEM_TITLE_3]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
+                                [DETAILS_PLACEHOLDER_3]
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="space-y-8 max-w-3xl mx-auto">
-                    <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
-                    <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
-                        <p class="text-zinc-400 font-serif text-2xl md:text-3xl leading-relaxed italic">
-                            Built in 1923, this asset represents the peak of the District's 'Garden Suburb' expansion. The bones are solid masonry, standing on the 16th Street Heights plateau—a geographic high point that historically offered elite respite from the humidity of the basin.
-                        </p>
+            </div>
+
+            <!-- Section 03: Acquisition -->
+            <div id="content-section3" class="content-section hidden opacity-0 transition-all duration-700">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-12">
+            <div>
+                <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // [RHYTHM_DISTANCE]</span>
+                <h4 class="font-serif text-2xl text-white mt-2">[COMMUNITY_RHYTHM_TITLE]</h4>
+                <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">[RHYTHM_INTEL]</p>
+            </div>
+            <div class="pt-8 border-t border-white/5">
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
+                <div class="mt-6 space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">[EVENT_1_DATE]</div>
+                        <div>
+                            <h5 class="text-white text-sm uppercase tracking-widest font-semibold">[EVENT_1_TITLE]</h5>
+                            <p class="text-zinc-500 text-xs mt-1">[EVENT_1_PRO_TIP]</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8">
+                        <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">[EVENT_2_DATE]</div>
+                        <div>
+                            <h5 class="text-white text-sm uppercase tracking-widest font-semibold">[EVENT_2_TITLE]</h5>
+                            <p class="text-zinc-500 text-xs mt-2 italic">[EVENT_2_PRO_TIP]</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
-             <div class="space-y-12">
-                <div class="group py-4">
-                    <div class="flex flex-col md:flex-row gap-10">
-                        <div class="md:w-1/3">
-                            <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
-                            <h4 class="font-serif text-2xl text-white mt-2">Moreland's Tavern</h4>
-                        </div>
-                        <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">The neighborhood living room. High-fidelity comfort food with a tactical advantage: the best patio for situational awareness on the plateau.</div>
-                    </div>
+        <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
+            <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
+            <div class="mt-8 space-y-6">
+                <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"[STRATEGIC_FORECAST_NARRATIVE]"</p>
+                <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
+                    <p class="text-white text-sm mt-2">[ADVISOR_STRATEGY_NOTE]</p>
                 </div>
-             </div>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
 
+        <!-- Unified Actions Footer -->
         <footer class="mt-24 text-center pb-20">
             <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-                <a href="https://g.page/r/YOUR_REVIEW_LINK/review" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+                <a href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                     <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
                 </a>
-                <a id="dynamic-consult-btn" href="https://script.google.com/macros/s/AKfycbxV-YmNdRa3vqhmuQDOawRz3HcwchlweaPsd7jYsX9KINWAm__cC-scWKcggSIDtzBJ/exec?pid=1419-buchanan&dest=CONSULT" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
+
+                <a id="dynamic-consult-btn" href="#" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
                     <span class="relative text-black group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Consult The Advisor.</span>
                 </a>
-                <a id="dynamic-license-btn" href="https://script.google.com/macros/s/AKfycbxV-YmNdRa3vqhmuQDOawRz3HcwchlweaPsd7jYsX9KINWAm__cC-scWKcggSIDtzBJ/exec?pid=1419-buchanan&dest=LICENSE" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
+
+                <a id="dynamic-license-btn" href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
                     <span class="text-white group-hover:text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em]">License Truth Engine™</span>
                 </a>
             </div>
+
             <div class="space-y-4">
+                <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
                 <p class="text-[9px] text-zinc-600 uppercase tracking-[0.5em] font-light">Confidential Intelligence // Authorized Access Only</p>
                 <div class="mt-4 flex justify-center">
-                    <span class="text-auth text-[7px] uppercase tracking-widest text-auth-field"></span>
+                    <span class="text-auth text-[7px] uppercase tracking-widest">Source-ID: truthengine.io/briefing/auth_[ASSET_ID]</span>
                 </div>
             </div>
         </footer>
+
     </main>
 
     <script>
         function switchTab(tabName) {
-            document.querySelectorAll('button[id^="tab-"]').forEach(btn => { btn.classList.remove('border-[var(--accent-gold)]'); btn.classList.add('border-white/5'); });
+            document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('border-[var(--accent-gold)]');
+                btn.classList.add('border-white/5');
+            });
+            document.getElementById(`tab-${tabName}`).classList.remove('border-white/5');
             document.getElementById(`tab-${tabName}`).classList.add('border-[var(--accent-gold)]');
-            document.querySelectorAll('.content-section').forEach(section => { section.classList.add('hidden'); section.classList.add('opacity-0'); });
-            const active = document.getElementById(`content-${tabName}`);
-            active.classList.remove('hidden');
-            setTimeout(() => active.classList.replace('opacity-0', 'opacity-100'), 50);
+
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('opacity-100');
+                section.classList.add('opacity-0');
+            });
+
+            const activeSection = document.getElementById(`content-${tabName}`);
+            activeSection.classList.remove('hidden');
+            setTimeout(() => {
+                activeSection.classList.remove('opacity-0');
+                activeSection.classList.add('opacity-100');
+            }, 50);
         }
 
+// Clean Dynamic Link Handler
         document.addEventListener('DOMContentLoaded', () => {
             const pathParts = window.location.pathname.split('/');
-            const derivedId = pathParts[pathParts.length - 3] || "1419-buchanan";
-            document.querySelector('.text-auth-field').innerText = `Source-ID: truthengine.io/briefing/auth_${derivedId}`;
-        });
+            // Gets ID from URL (3 folders back)
+            const derivedAssetId = pathParts[pathParts.length - 3] || "general-inquiry";
+
+            const authText = document.querySelector('.text-auth');
+    if (authText) authText.innerText = `Source-ID: truthengine.io/briefing/auth_${derivedAssetId}`;
+            const consultBtn = document.getElementById('dynamic-consult-btn');
+            const licenseBtn = document.getElementById('dynamic-license-btn');
+
+            if(consultBtn) {
+                consultBtn.href = `mailto:advisor@truthengine.io?subject=Consultation: ${derivedAssetId}`;
+                consultBtn.addEventListener('click', () => {
+                    gtag('event', 'contact_click', { 'asset_id': derivedAssetId, 'type': 'CONSULT' });
+                });
+            }
+
+            if(licenseBtn) {
+                licenseBtn.href = `mailto:licensing@truthengine.io?subject=Licensing: ${derivedAssetId}`;
+                licenseBtn.addEventListener('click', () => {
+                    gtag('event', 'contact_click', { 'asset_id': derivedAssetId, 'type': 'LICENSE' });
+                });
+    }
+});
+    
+   
     </script>
 </body>
-</html>
+</html>>
