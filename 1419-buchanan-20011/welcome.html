@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X889MYFV7L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
+
+  // GLOBAL EXTRACTION - No fallbacks, the link is law
   const urlParams = new URLSearchParams(window.location.search);
-  const utmSource = urlParams.get('utm_source') || 'mejia';
-  const utmMedium = urlParams.get('utm_medium') || 'email';
-  const utmCampaign = urlParams.get('utm_campaign') || 'welcome';
-  const utmContent = urlParams.get('utm_content') || 'alexander';
-  const finalAssetId = urlParams.get('utm_id') || '1419-buchanan-20011';
-  
+  window.utmSource = urlParams.get('utm_source') || 'direct';
+  window.utmMedium = urlParams.get('utm_medium') || 'none';
+  window.utmCampaign = urlParams.get('utm_campaign') || 'no_campaign';
+  window.finalAssetId = urlParams.get('utm_id') || 'unverified';
+  window.utmContent = urlParams.get('utm_content') || 'not_set';
+
   gtag('config', 'G-X889MYFV7L', {
-    'send_page_view': true, 
-    'page_location': window.location.href,
-    'user_id': utmSource, 
+    'send_page_view': true, // THE SHOUT IS ON
+    'user_id': window.utmSource, 
     'custom_map': {
         'dimension1': 'asset_id',
         'dimension2': 'client',
-        'dimension3': 'passenger',
-        'dimension4': 'phase',
-        'dimension5': 'channel'
+        'dimension3': 'passenger'
     }
   });
-  
+
   gtag('event', 'dossier_engagement', {
-    'asset_id': finalAssetId,
-    'client': utmSource,
-    'passenger': utmContent,
-    'phase': utmCampaign,
-    'channel': utmMedium
+    'asset_id': window.finalAssetId,
+    'client': window.utmSource,
+    'passenger': window.utmContent
   });
 </script>
 
