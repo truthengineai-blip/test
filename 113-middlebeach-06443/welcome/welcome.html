@@ -8,57 +8,54 @@
   gtag('js', new Date());
   
   const urlParams = new URLSearchParams(window.location.search);
-  
-  // 1. EXTRACT PROTOCOL KEYS
-  const utmSource   = urlParams.get('utm_source') || 'sourceScorah'; 
-  const utmMedium   = urlParams.get('utm_medium') || 'email'; 
-  const utmCampaign = urlParams.get('utm_campaign') || 'welcome';
-  const utmContent  = urlParams.get('utm_content') || 'buyerTest';
- 
   const pathArray = window.location.pathname.split('/');
-  const finalAssetId = urlParams.get('utm_id') || '113-middlebeach-06443';
- 
-  // 2. CONFIG: LOCK SLOTS
+  
+  // THE GLOBAL OVERRIDE
+  window.utmSource = urlParams.get('utm_source') || 'test9:30p'; 
+  window.utmMedium = urlParams.get('utm_medium') || 'email'; 
+  window.utmCampaign = urlParams.get('utm_campaign') || 'welcome';
+  window.utmContent = urlParams.get('utm_content') || 'buyer930p';
+  window.finalAssetId = urlParams.get('utm_id') || '113-middlebeach-06443';
+  
   gtag('config', 'G-X889MYFV7L', {
-  'debug_mode': true, 
-  'custom_map': {
-      'dimension1': 'asset_id', 
-      'dimension2': 'source', 
-      'dimension3': 'content',
-      'dimension4': 'medium',
-      'dimension5': 'campaign'
-  }
-});
- 
-  // 3. INITIAL LOAD (Unified Silo View)
+    'debug_mode': true, 
+    'custom_map': {
+        'dimension1': 'asset_id', 
+        'dimension2': 'source', 
+        'dimension3': 'content',
+        'dimension4': 'medium',
+        'dimension5': 'campaign'
+    }
+  });
+  
   gtag('event', 'silo_view', {
-  'asset_id': finalAssetId,
-  'source': utmSource,
-  'medium': 'dossier_open',
-  'content': utmContent,
-  'campaign': utmCampaign
-});
+    'asset_id': window.finalAssetId,
+    'source': window.utmSource,
+    'medium': 'dossier_open',
+    'content': window.utmContent,
+    'campaign': window.utmCampaign
+  });
 </script>
- 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Truth Engine: Neighborhood Dossier | 113 Middle Beach</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
- 
+
   <style>
       .font-serif { font-family: 'Cormorant Garamond', serif; }
       .font-sans { font-family: 'Inter', sans-serif; }
       
       :root {
-          --bg-color: #0A0A0A; /* Deep Onyx */
-          --accent-gold: #C5A059; /* Muted Champagne Gold */
-          --accent-prestige: #FACC15; /* High-vis Highlight */
+          --bg-color: #0A0A0A; 
+          --accent-gold: #C5A059; 
+          --accent-prestige: #FACC15; 
           --text-main: #FFFFFF;
           --text-muted: #A1A1AA;
           --card-border: rgba(197, 160, 89, 0.15);
       }
- 
+
       body {
           background-color: var(--bg-color);
           color: var(--text-main);
@@ -66,38 +63,38 @@
               radial-gradient(circle at 0% 0%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
               radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
       }
- 
+
       .prestige-border {
           border: 1px solid var(--card-border);
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
- 
+
       .prestige-border:hover {
           border-color: rgba(197, 160, 89, 0.4);
           background: rgba(255, 255, 255, 0.02);
       }
- 
+
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: #000; }
       ::-webkit-scrollbar-thumb { background: var(--accent-gold); }
- 
+
       @keyframes subtleScale {
           from { opacity: 0; transform: scale(0.99); }
           to { opacity: 1; transform: scale(1); }
       }
- 
+
       @keyframes pulse-gold {
           0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
           70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
           100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
       }
- 
+
       .text-auth { 
-  color: rgba(197, 160, 89, 0.4); 
-  font-family: monospace;
-  letter-spacing: 0.15em;
-}
- 
+          color: rgba(197, 160, 89, 0.4); 
+          font-family: monospace;
+          letter-spacing: 0.15em;
+      }
+
       .animate-entrance { animation: subtleScale 1.2s ease-out forwards; }
       .letter-spacing-luxury { letter-spacing: 0.3em; }
       .pulse-prestige { animation: pulse-gold 2s infinite; }
@@ -105,7 +102,7 @@
   </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
- 
+
   <header class="w-full py-8 px-10 flex justify-between items-center sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/5">
       <div class="flex items-center gap-4">
           <div class="w-10 h-10 border-t border-l border-[var(--accent-gold)] flex items-center justify-center">
@@ -115,41 +112,40 @@
       </div>
       <div class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-light">Established MMXXV</div>
   </header>
- 
+
   <main class="flex-grow container mx-auto px-6 py-12 md:py-20 max-w-6xl">
- 
+
       <section class="mb-24 text-center animate-entrance">
           <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
-          <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight uppercase">
-              113 Middle Beach
+          <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
+              113 Middle Beach Road
           </h2>
           <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
           <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
               <p class="text-white text-xs font-light tracking-widest uppercase italic">
-                  Status: <span class="text-[var(--accent-gold)] ml-2 font-normal uppercase">Master of the Madison Shoreline</span>
+                  Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Master of the Madison Shoreline Plateau</span>
               </p>
           </div>
           <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-              "The boxes are gone, the salt air is a permanent fixture in your linens, and the rhythm of Long Island Sound has likely replaced your alarm clock. While the first 90 days are about finding the light switches, the next 90 are about mastering the terrain.<br><br>
-              You haven't just bought a home; you've acquired a vantage point over one of Connecticut’s most storied coastal stretches. Consider this your Tactical Briefing for the streets surrounding 113 Middle Beach."
+              "You’ve officially transitioned from 'moving in' to 'living well.' By now, the boxes are gone, the salt air is a permanent fixture in your morning routine, and you’ve likely realized that 113 Middle Beach Road isn't just an address—it’s a front-row seat to the best stretch of the Connecticut coast.<br><br>This is your Tactical Briefing for the shoreline mastery you now command."
           </div>
       </section>
- 
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           <button onclick="switchTab('section1')" id="tab-section1" class="prestige-border p-10 text-center group border-[var(--accent-gold)]">
-              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Narrative</span>
-              <h3 class="font-serif text-2xl text-white uppercase">Bones & Origin</h3>
+              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">01 // History</span>
+              <h3 class="font-serif text-2xl text-white">Bones & Origin</h3>
           </button>
           <button onclick="switchTab('section2')" id="tab-section2" class="prestige-border p-10 text-center group">
-              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Lifestyle</span>
-              <h3 class="font-serif text-2xl text-white uppercase">Tactical Rotation</h3>
+              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">02 // Lifestyle</span>
+              <h3 class="font-serif text-2xl text-white">Tactical Rotation</h3>
           </button>
           <button onclick="switchTab('section3')" id="tab-section3" class="prestige-border p-10 text-center group">
-              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Outlook</span>
-              <h3 class="font-serif text-2xl text-white uppercase">Seasonal Horizon</h3>
+              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">03 // Tactical Horizon</span>
+              <h3 class="font-serif text-2xl text-white">Seasonal Horizon</h3>
           </button>
       </div>
- 
+
       <div class="bg-white/[0.01] border border-white/5 p-10 md:p-20 min-h-[500px] relative animate-entrance">
           
           <div id="content-section1" class="content-section transition-all duration-700">
@@ -157,39 +153,39 @@
                   <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
               </div>
               <div class="flex flex-col gap-20">
-  <div class="space-y-8">
-      <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Core Footprint</h4>
-      <div class="w-full max-w-2xl mx-auto py-16 bg-zinc-900/30 border border-white/5 flex flex-col items-center justify-center relative">
-          <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
-          <div class="space-y-6 text-center">
-              <div class="text-white font-light tracking-geo text-xl md:text-3xl">
-                  <span id="lat-value">41.2721°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                  <div class="space-y-8">
+                      <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Core Footprint</h4>
+                      <div class="w-full max-w-2xl mx-auto py-16 bg-zinc-900/30 border border-white/5 flex flex-col items-center justify-center relative">
+                          <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
+                          <div class="space-y-6 text-center">
+                              <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                                  <span id="lat-value">41.2754°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                              </div>
+                              <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                                  <span id="lon-value">72.5976°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
+                              </div>
+                          </div>
+                          <div class="mt-16">
+                              <span class="text-zinc-600 text-[9px] uppercase tracking-[0.5em] font-light">Precision Verified Data</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="space-y-8 max-w-3xl mx-auto">
+                      <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
+                      <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
+                          <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
+                              Your property sits on land that was once the agricultural backbone of the New Haven colony before it became a Gilded Age summer sanctuary. The "Bones" of this immediate stretch are defined by the Shingle Style and Colonial Revival architecture that rose in the late 19th century.
+                          </p>
+                          <br><br>
+                          <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
+                              Beyond the architecture lies a subterranean social secret: the "hidden" boundary of the Tuxis Pond system. This area was historically significant as a navigational landmark for indigenous communities and later served as a secluded corridor for "rum-running" during the 1920s.
+                          </p>
+                      </div>
+                  </div>
               </div>
-              <div class="text-white font-light tracking-geo text-xl md:text-3xl">
-                  <span id="lon-value">72.5923°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
-              </div>
           </div>
-          <div class="mt-16">
-              <span class="text-zinc-600 text-[9px] uppercase tracking-[0.5em] font-light">Precision Verified Data</span>
-          </div>
-      </div>
-  </div>
- 
-  <div class="space-y-8 max-w-3xl mx-auto">
-      <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
-      <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
-  <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-      The "Bones" of this specific stretch of Middle Beach Road are rooted in the Shingle Style and Colonial Revival movements, designed to withstand the brutal northeasters while maintaining the elegance of the Gilded Age. Originally, this land was part of the pastoral holdings that transitioned from agrarian salt hay farming to high-society coastal retreats as the railroad made Madison accessible to the New York elite.
-  </p>
-  <div class="h-8"></div> 
-  <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-      The subterranean secret of your immediate radius lies just a short walk away at the Tuxis Island overlook. While it appears as a serene rock formation, local lore identifies it as a former "lookout" point during the era of the Rum Runners. During Prohibition, the jagged coastline of Middle Beach provided the perfect labyrinth for small boats to offload cargo into hidden cellars of the very cottages that line your street today.
-  </p>
-</div>
-  </div>
-</div>
-          </div>
- 
+
           <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
               <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                   <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
@@ -198,100 +194,101 @@
               <div class="space-y-12">
                   <div class="group py-4">
                       <div class="flex flex-col md:flex-row gap-10">
-                    <div class="md:w-1/3">
-                        <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
-                        <h4 class="font-serif text-2xl text-white mt-2">Hammonasset Beach State Park [1.1 mi]</h4>
-                    </div>
-                    <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                        The undisputed shoreline heavy hitter. It draws the masses, but as a local, your mastery is knowing the Meigs Point jetty at sunrise—before the gates officially "open" to the public.
-                    </div>
+                          <div class="md:w-1/3">
+                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
+                              <h4 class="font-serif text-2xl text-white mt-2">Hammonasset Beach [1.2 mi]</h4>
+                          </div>
+                          <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                              The undisputed crown jewel of the region. While tourists flock to the main boardwalk, locals know the Meigs Point Jetty offers the best sunrise solitude.
+                          </div>
                       </div>
                   </div>
                   <div class="group py-4">
                       <div class="flex flex-col md:flex-row gap-10">
-                    <div class="md:w-1/3">
-                        <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE ANCHOR</span>
-                        <h4 class="font-serif text-2xl text-white mt-2">The Madison Beach Hotel [1.4 mi]</h4>
-                    </div>
-                    <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                        The "Old Guard" Friday night ritual spot. Whether it’s high summer or a coastal freeze, the fire pits at The Wharf are the neighborhood’s unofficial town square.
-                    </div>
+                          <div class="md:w-1/3">
+                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE ANCHOR</span>
+                              <h4 class="font-serif text-2xl text-white mt-2">The Wharf at Madison Beach [1.4 mi]</h4>
+                          </div>
+                          <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                              The "Old Guard" Friday night ritual spot. Pro Tip: Request a terrace table exactly 20 minutes before sunset; the staff prioritizes regulars for the corner views.
+                          </div>
                       </div>
                   </div>
                   <div class="py-12 px-10 bg-[var(--accent-prestige)]/5 border-y border-[var(--accent-prestige)]/20 relative overflow-hidden pulse-prestige">
                       <div class="absolute top-0 right-0 p-4">
-                        <div class="w-2 h-2 rounded-full bg-[var(--accent-prestige)] animate-pulse"></div>
+                          <div class="w-2 h-2 rounded-full bg-[var(--accent-prestige)] animate-pulse"></div>
                       </div>
                       <div class="flex flex-col md:flex-row gap-10">
-                    <div class="md:w-1/3">
-                        <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // THE SECRET</span>
-                        <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Bradley & Wall [1.9 mi]</h4>
-                    </div>
-                    <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
-                        The "Inner Club" micro-gem. Tourists stay on Main Street; locals head here for the "Gourmet Italian" contraband. PRO TIP: Order the "Chicken Cutlet Special" but ask for it "Old School style" with long hots.
-                    </div>
+                          <div class="md:w-1/3">
+                              <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // THE SECRET</span>
+                              <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">The Coastline Market [0.9 mi]</h4>
+                          </div>
+                          <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
+                              A high-concept Cottage Kitchen gem. Insider Secret: Their sourdough is baked at 5:00 AM and usually sells out by 9:00 AM—call ahead to have a loaf tucked under the counter.
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
- 
+
           <div id="content-section3" class="content-section hidden opacity-0 transition-all duration-700">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-      <div class="space-y-12">
-          <div>
-              <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 1.6 mi</span>
-              <h4 class="font-serif text-2xl text-white mt-2">Madison Farmers’ Market</h4>
-              <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">Every Friday afternoon on the Green. This is where the local rhythm is set—pick up your sourdough from Wave Hill Breads before they sell out by 3:00 PM.</p>
-          </div>
-          <div class="pt-8 border-t border-white/5">
-              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
-              <div class="mt-6 space-y-8">
-                  <div class="flex gap-6">
-                      <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">March</div>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                  <div class="space-y-12">
                       <div>
-                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Shoreline Restaurant Week</h5>
-                        <p class="text-zinc-500 text-xs mt-1">A hyper-local takeover where "Old Guard" spots offer off-menu concepts.</p>
+                          <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 1.6 mi</span>
+                          <h4 class="font-serif text-2xl text-white mt-2">Madison Farmers’ Market</h4>
+                          <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The neighborhood’s social heartbeat occurs every Friday on the Green. This is where the local pace is set and shorefront residents gather for the season's first harvest.</p>
+                      </div>
+                      <div class="pt-8 border-t border-white/5">
+                          <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
+                          <div class="mt-6 space-y-8">
+                              <div class="flex gap-6">
+                                  <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">MARCH</div>
+                                  <div>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Shoreline Restaurant Week</h5>
+                                      <p class="text-zinc-500 text-xs mt-1">A curated showcase of the Sound’s best culinary talent.</p>
+                                  </div>
+                              </div>
+                              <div class="flex gap-8">
+                                  <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">MAY</div>
+                                  <div>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Madison Green Antiques Show</h5>
+                                      <p class="text-zinc-500 text-xs mt-2 italic">Pro Tip: Arrive 30 minutes before the official opening for first-look access to New England maritime artifacts.</p>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
                   </div>
-                  <div class="flex gap-8">
-                      <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">April</div>
-                      <div>
-                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Tuxis Pond Social</h5>
-                        <p class="text-zinc-500 text-xs mt-2 italic">The quintessential "meet the neighbors" community cleanup and gathering.</p>
+
+                  <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
+                      <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
+                      <div class="mt-8 space-y-6">
+                          <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"Developments are currently underway to increase pedestrian connectivity between Middle Beach and the Historic District, projected to further elevate property values by enhancing the walkable village feel."</p>
+                          <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
+                              <p class="text-white text-sm mt-2">Strategic deployment of infrastructure is expected to settle into full community rhythm by Q4 2026.</p>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
+
       </div>
- 
-      <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
-          <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
-          <div class="mt-8 space-y-6">
-              <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Madison Center Project continues to refine the walkability of the downtown corridor. Development of the Academy School site is slated to become a focal point for community arts and gathering, further anchoring property values."</p>
-              <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
-                  <p class="text-white text-sm mt-2 uppercase tracking-tighter">Strategic Impact: Q4 2026 completion expected to increase village-core gravity.</p>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-      </div>
- 
+
       <footer class="mt-24 text-center pb-20">
           <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-              <a href="https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY&utm_source=sourceScorah&utm_medium=cta_button&utm_campaign=welcome&utm_id=113-middlebeach-06443&utm_content=buyerTest" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+              <a href="https://truthengine.io/placeholder?utm_source=test9:30p&utm_medium=email&utm_campaign=welcome&utm_id=113-middlebeach-06443&utm_content=buyer930p" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                   <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
               </a>
- 
-              <a id="dynamic-consult-btn" href="#" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
+
+              <a id="dynamic-consult-btn" href="https://calendly.com/mejia-pas/30min?utm_source=test9:30p&utm_medium=email&utm_campaign=welcome&utm_id=113-middlebeach-06443&utm_content=buyer930p" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
                   <span class="relative text-black group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Consult The Advisor.</span>
               </a>
- 
-              <a id="dynamic-license-btn" href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
+
+              <a id="dynamic-license-btn" href="mailto:truthengine.ai@gmail.com?subject=Licensing:113-middlebeach-06443&body=I%20am%20interested%20in%20licensing%20the%20Truth%20Engine™%20for%20my%20clients." class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
                   <span class="text-white group-hover:text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em]">License Truth Engine™</span>
               </a>
           </div>
- 
+
           <div class="space-y-4">
               <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
               <p class="text-[9px] text-zinc-600 uppercase tracking-[0.5em] font-light">Confidential Intelligence // Authorized Access Only</p>
@@ -300,102 +297,106 @@
               </div>
           </div>
       </footer>
+
   </main>
- 
+
   <script>
       function switchTab(tabName) {
-  const tabMap = {
-      'section1': 'Bones & Origin',
-      'section2': 'Tactical Rotation',
-      'section3': 'Seasonal Horizon'
-  };
- 
-  gtag('event', 'dossier_dissection', { 
-      'asset_id': finalAssetId,
-      'source': utmSource,
-      'content': utmContent,
-      'campaign': utmCampaign,
-      'medium': 'dossier_tabs',
-      'method': tabMap[tabName] || tabName
-  });
- 
-  document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
-      btn.classList.remove('border-[var(--accent-gold)]');
-      btn.classList.add('border-white/5');
-  });
- 
-  document.getElementById(`tab-${tabName}`).classList.remove('border-white/5');
-  document.getElementById(`tab-${tabName}`).classList.add('border-[var(--accent-gold)]');
- 
-  document.querySelectorAll('.content-section').forEach(section => {
-      section.classList.add('hidden');
-      section.classList.remove('opacity-100');
-      section.classList.add('opacity-0');
-  });
- 
-  const activeSection = document.getElementById(`content-${tabName}`);
-  activeSection.classList.remove('hidden');
-  setTimeout(() => {
-      activeSection.classList.remove('opacity-0');
-      activeSection.classList.add('opacity-100');
-  }, 50);
-}
- 
-      document.addEventListener('DOMContentLoaded', () => {
-  const authDisplay = document.getElementById('auth-display');
-  if (authDisplay) {
-      authDisplay.innerText = `Source-ID: truthengine.io/briefing/auth_${finalAssetId}`;
-  }
- 
-const commonParams = {
-      'asset_id': finalAssetId,
-      'source': utmSource,
-      'content': utmContent,
-      'campaign': utmCampaign
-  };
- 
-  // 1. Consult Button
-  const consultBtn = document.getElementById('dynamic-consult-btn');
-  if(consultBtn) {
-      const trackingQuery = `?utm_source=${utmSource}&utm_medium=cta_button&utm_campaign=${utmCampaign}&utm_id=${finalAssetId}&utm_content=${utmContent}`;
-      consultBtn.href = `https://calendly.com/mejia-pas/30min${trackingQuery}`;
-      consultBtn.target = "_blank"; 
-      
-      consultBtn.addEventListener('mousedown', () => {
-          gtag('event', 'executive_intent', { ...commonParams, 'medium': 'consult_advisor' });
-      });
-  }
- 
-  // 2. License Button
-  const licenseBtn = document.getElementById('dynamic-license-btn');
-  if(licenseBtn) {
-      licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing: ${finalAssetId}`;
-      licenseBtn.addEventListener('mousedown', () => {
-          gtag('event', 'executive_intent', { ...commonParams, 'medium': 'license_inquiry' });
-      });
-  }
- 
-  // 3. Attest Button
-  const attestBtn = document.querySelector('a[href*="search.google.com"]');
-  if(attestBtn) {
-      attestBtn.addEventListener('mousedown', () => {
-          gtag('event', 'review_intent', { ...commonParams, 'medium': 'attest_excellence' });
-      });
-  }
-});
+          const tabMap = {
+              'section1': 'Bones & Origin',
+              'section2': 'Tactical Rotation',
+              'section3': 'Seasonal Horizon'
+          };
 
-let scrollTracked = false;
-window.addEventListener('scroll', () => {
-  if (!scrollTracked && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-  gtag('event', 'dossier_dissection', {
-    'asset_id': finalAssetId,
-    'source': utmSource,
-    'medium': 'scroll_completion',
-    'method': 'full_dossier_read'
-  });
-  scrollTracked = true; 
-  }
-});
+          gtag('event', 'dossier_dissection', { 
+              'asset_id': window.finalAssetId,
+              'source': window.utmSource,
+              'content': window.utmContent,
+              'campaign': window.utmCampaign,
+              'medium': 'dossier_tabs',
+              'method': tabMap[tabName] || tabName 
+          });
+
+          document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+              btn.classList.remove('border-[var(--accent-gold)]');
+              btn.classList.add('border-white/5');
+          });
+          document.getElementById(`tab-${tabName}`).classList.remove('border-white/5');
+          document.getElementById(`tab-${tabName}`).classList.add('border-[var(--accent-gold)]');
+
+          document.querySelectorAll('.content-section').forEach(section => {
+              section.classList.add('hidden');
+              section.classList.remove('opacity-100');
+              section.classList.add('opacity-0');
+          });
+
+          const activeSection = document.getElementById(`content-${tabName}`);
+          activeSection.classList.remove('hidden');
+          setTimeout(() => {
+              activeSection.classList.remove('opacity-0');
+              activeSection.classList.add('opacity-100');
+          }, 50);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+          const authDisplay = document.getElementById('auth-display');
+          if (authDisplay) {
+              authDisplay.innerText = `Source-ID: truthengine.io/briefing/auth_${window.finalAssetId}`;
+          }
+
+          const commonParams = {
+              'asset_id': window.finalAssetId,
+              'source': window.utmSource,
+              'content': window.utmContent,
+              'campaign': window.utmCampaign
+          };
+
+          const consultBtn = document.getElementById('dynamic-consult-btn');
+          if(consultBtn) {
+              consultBtn.addEventListener('mousedown', () => {
+                  gtag('event', 'dossier_dissection', { 
+                      ...commonParams, 
+                      'medium': 'dossier_tabs', 
+                      'method': 'Consult Intent' 
+                  });
+              });
+          }
+
+          const licenseBtn = document.getElementById('dynamic-license-btn');
+          if(licenseBtn) {
+              licenseBtn.addEventListener('mousedown', () => {
+                  gtag('event', 'dossier_dissection', { 
+                      ...commonParams, 
+                      'medium': 'dossier_tabs', 
+                      'method': 'License Intent' 
+                  });
+              });
+          }
+
+          const attestBtn = document.querySelector('a[href*="truthengine.io/placeholder"]');
+          if(attestBtn) {
+              attestBtn.addEventListener('mousedown', () => {
+                  gtag('event', 'dossier_dissection', { 
+                      ...commonParams, 
+                      'medium': 'attest_excellence',
+                      'method': 'Review Intent' 
+                  });
+              });
+          }
+      });
+
+      let scrollTracked = false;
+      window.addEventListener('scroll', () => {
+          if (!scrollTracked && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+              gtag('event', 'dossier_dissection', {
+                  'asset_id': window.finalAssetId,
+                  'source': window.utmSource,
+                  'medium': 'dossier_tabs',
+                  'method': 'full_dossier_read'
+              });
+              scrollTracked = true; 
+          }
+      });
   </script>
 </body>
 </html>
