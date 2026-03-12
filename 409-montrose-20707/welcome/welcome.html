@@ -6,17 +6,17 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
+ 
   const urlParams = new URLSearchParams(window.location.search);
   const pathArray = window.location.pathname.split('/');
-  
+ 
   // THE GLOBAL OVERRIDE
   window.utmSource   = urlParams.get('utm_source') || 'mejia'; 
-  window.utmMedium   = urlParams.get('utm_medium') || 'webpage'; 
+  window.utmMedium   = urlParams.get('utm_medium') || 'email'; 
   window.utmCampaign = urlParams.get('utm_campaign') || 'welcome';
   window.utmContent  = urlParams.get('utm_content') || 'luis-abrego';
   window.finalAssetId = urlParams.get('utm_id') || '409-montrose-20707';
-  
+ 
   gtag('config', 'G-X889MYFV7L', {
     'debug_mode': true, 
     'custom_map': {
@@ -27,7 +27,7 @@
         'dimension5': 'campaign'
     }
   });
-  
+ 
   gtag('event', 'silo_view', {
     'asset_id': window.finalAssetId,
     'source': window.utmSource,
@@ -116,18 +116,18 @@
 
         <section class="mb-24 text-center animate-entrance">
             <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
-            <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight uppercase">
-                409 Montrose Ave
+            <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
+                409 Montrose Avenue
             </h2>
             <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
             <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
                 <p class="text-white text-xs font-light tracking-widest uppercase italic">
-                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal uppercase">Master of the Laurel Plateau</span>
+                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Seasoned Resident // 32 Weeks In</span>
                 </p>
             </div>
             <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-                It has been 90 days since you officially claimed your stake in the heart of Laurel. By now, the boxes are likely gone, the echoes have settled, and 409 Montrose Avenue has transformed from a transaction into a home. <br><br>
-                But owning the address is only half the victory; mastering the rhythm of the streets is where the true lifestyle begins. Consider this your Tactical Briefing for the streets surrounding 409 Montrose.
+                You’ve officially navigated the transition from "moving in" to "living in." As you watch the neighborhood shift from the brisk Maryland winter into the first signs of the Mid-Atlantic spring, the rhythm of Laurel is likely becoming second nature. <br><br>
+                You are no longer a guest in the 20707; you are part of the architecture. Consider this your Tactical Briefing for the streets surrounding your property.
             </div>
         </section>
 
@@ -150,7 +150,7 @@
             
             <div id="content-section1" class="content-section transition-all duration-700">
                 <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
-                    <h3 class="font-serif text-3xl italic text-white">Industrial Heritage</h3>
+                    <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
                 </div>
                 <div class="flex flex-col gap-20">
                     <div class="space-y-8">
@@ -159,7 +159,7 @@
                             <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
                             <div class="space-y-6 text-center">
                                 <div class="text-white font-light tracking-geo text-xl md:text-3xl">
-                                    <span id="lat-value">39.1001°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                                    <span id="lat-value">39.0982°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
                                 </div>
                                 <div class="text-white font-light tracking-geo text-xl md:text-3xl">
                                     <span id="lon-value">76.8483°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
@@ -175,11 +175,11 @@
                         <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
                         <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
                             <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                                Your home sits on land that once dictated the pulse of the American textile industry. Before the 1951 brick structure was erected, this area was part of the vast Snowden family holdings. Your specific lot is tied to the legacy of Nicholas Snowden, who established the initial cotton mills that turned this stretch of the Patuxent into a manufacturing powerhouse.
+                                Your home on Montrose Avenue sits within the original Prince George’s County expansion of Laurel, characterized by the transition from industrial mill housing to the mid-century suburban boom. The physical bones reflect the post-WWII era’s reliance on sturdy masonry and regional timber.
                             </p>
                             <div class="h-8"></div> 
                             <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                                Beyond the visible architecture lies a subterranean secret: the remnants of the Avondale Mill and its historic races. Within a mile of your door, hidden stone foundations and bulwarks still trace the routes where water was diverted to power the massive textile factories of the 1840s.
+                                Beyond the brick lies a social secret rooted in the nearby Patuxent River. The land once served as the grounds for the Avondale Mill. The true "underground" history involves the old trolley lines and the "Dead Man’s Curve" that moved the workforce through these very blocks.
                             </p>
                         </div>
                     </div>
@@ -189,17 +189,17 @@
             <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
                 <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                     <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
-                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">10mi Radius Lockdown</span>
+                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">Radius Lockdown // 1.2 Mi</span>
                 </div>
                 <div class="space-y-12">
                     <div class="group py-4">
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
                                 <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
-                                <h4 class="font-serif text-2xl text-white mt-2">Laurel Park [1.4 mi]</h4>
+                                <h4 class="font-serif text-2xl text-white mt-2">Olive on Main</h4>
                             </div>
                             <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                                The neighborhood's most famous destination and the historic home of the Maryland Million. The "Post Time" energy defines the neighborhood's social peak.
+                                The neighborhood’s premier destination for Mediterranean flavors and the high-point of Laurel’s dining revival. It is the gold standard for a polished night out within walking distance.
                             </div>
                         </div>
                     </div>
@@ -207,10 +207,10 @@
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
                                 <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE ANCHOR</span>
-                                <h4 class="font-serif text-2xl text-white mt-2">Toucan Taco [0.8 mi]</h4>
+                                <h4 class="font-serif text-2xl text-white mt-2">Toucan Tacos</h4>
                             </div>
                             <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                                A family-owned institution since 1972. The "Old Guard" ritual spot. Pro Tip: Order the "Taco Burger"—a legacy menu item and local cult favorite.
+                                A Laurel institution for over 50 years. This isn’t just a meal; it’s a Friday night ritual. Order the "Saucy Taco" to understand the 1972 heritage.
                             </div>
                         </div>
                     </div>
@@ -220,11 +220,11 @@
                         </div>
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
-                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // THE SECRET</span>
-                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Blue Sunday [2.4 mi]</h4>
+                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret</span>
+                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Ragamuffins Coffee House</h4>
                             </div>
                             <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
-                                The high-concept disruptor. An Asian-American fusion gem for sushi and cocktails. 
+                                Tucked away and fiercely independent, this cottage-style gem serves hyper-curated roasts and house-made pastries that tourists miss while looking for the Main Street signs.
                             </div>
                         </div>
                     </div>
@@ -235,9 +235,11 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div class="space-y-12">
                         <div>
-                            <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.8 mi</span>
-                            <h4 class="font-serif text-2xl text-white mt-2">Laurel Farmer’s Market</h4>
-                            <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The community gathering heart at 378 Main Street. Pro Tip: Arrive early for the freshest Maryland produce and micro-local honey.</p>
+                            <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.5 Mi</span>
+                            <h4 class="font-serif text-2xl text-white mt-2">Main Street Laurel Corridor</h4>
+                            <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">
+                                The community pulse is most felt during the Saturday morning foot traffic, where the historic core blends commerce with local interaction.
+                            </p>
                         </div>
                         <div class="pt-8 border-t border-white/5">
                             <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
@@ -245,15 +247,15 @@
                                 <div class="flex gap-6">
                                     <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">April</div>
                                     <div>
-                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Patuxent River Clean Up</h5>
-                                        <p class="text-zinc-500 text-xs mt-1 italic">Pro Tip: Great for meeting active neighbors committed to local preservation at Riverfront Park.</p>
+                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Riverfest at Riverfront Park</h5>
+                                        <p class="text-zinc-500 text-xs mt-1">A seasonal celebration of the Patuxent River history and local ecology.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-8">
-                                    <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">April</div>
+                                    <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">May</div>
                                     <div>
-                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">LEMONFEST 2026</h5>
-                                        <p class="text-zinc-500 text-xs mt-2 italic">The most vibrant cultural festival in the city. Expect local artisan pop-ups and live music.</p>
+                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Main Street Festival</h5>
+                                        <p class="text-zinc-500 text-xs mt-2 italic">A massive local takeover featuring artisans, local food vendors, and live performances.</p>
                                     </div>
                                 </div>
                             </div>
@@ -263,20 +265,21 @@
                     <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
                         <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
                         <div class="mt-8 space-y-6">
-                            <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"Keep a tactical eye on the 'Sustainable Laurel' initiatives. The city's master plan for the Main Street corridor is shifting toward increased walkability and green-space expansion."</p>
+                            <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">
+                                "The city is actively investing in enhanced pedestrian connectivity and aesthetic upgrades to the historic core, which continues to drive the desirability and valuation of the surrounding residential pockets like Montrose."
+                            </p>
                             <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
-                                <p class="text-white text-sm mt-2">Expansion expected to reach maturity by Q4 2026, anchoring local property values.</p>
+                                <p class="text-white text-sm mt-2">Strategic stabilization expected to settle through Q4 2026 as infrastructure projects finalize.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <footer class="mt-24 text-center pb-20">
             <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-                <a href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                     <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
                 </a>
 
@@ -309,10 +312,10 @@
             };
 
             gtag('event', 'dossier_dissection', { 
-                'asset_id': window.finalAssetId, 
-                'source': window.utmSource,      
-                'content': window.utmContent,    
-                'campaign': window.utmCampaign,  
+                'asset_id': window.finalAssetId,
+                'source': window.utmSource,
+                'content': window.utmContent,
+                'campaign': window.utmCampaign,
                 'medium': 'webpage',
                 'method': tabMap[tabName] || tabName 
             });
@@ -358,34 +361,22 @@
                 consultBtn.setAttribute('href', `https://calendly.com/mejia-pas/30min${trackingQuery}`);
                 consultBtn.setAttribute('target', '_blank');
                 consultBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { 
-                        ...commonParams, 
-                        'method': 'Consult Intent' 
-                    });
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Consult Intent' });
                 });
             }
 
             const licenseBtn = document.getElementById('dynamic-license-btn');
             if(licenseBtn) {
-                licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing: ${window.finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
+                licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing:${window.finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
                 licenseBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { 
-                        ...commonParams, 
-                        'method': 'License Intent' 
-                    });
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'License Intent' });
                 });
             }
 
-            const attestBtn = document.querySelector('a[href="#"]'); 
-            if(attestBtn && attestBtn.innerText.includes('ATTEST')) {
-                const reviewUrl = "https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY";
-                attestBtn.setAttribute('href', reviewUrl);
-                attestBtn.setAttribute('target', '_blank');
+            const attestBtn = document.querySelector('a[href*="writereview"]');
+            if(attestBtn) {
                 attestBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { 
-                        ...commonParams, 
-                        'method': 'Review Intent' 
-                    });
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Review Intent' });
                 });
             }
         });
