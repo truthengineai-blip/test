@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X889MYFV7L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const pathArray = window.location.pathname.split('/');
+  
+  // THE GLOBAL OVERRIDE
+  window.utmSource   = urlParams.get('utm_source') || 'mejia'; 
+  window.utmMedium   = urlParams.get('utm_medium') || 'email'; 
+  window.utmCampaign = urlParams.get('utm_campaign') || 'welcome';
+  window.utmContent  = urlParams.get('utm_content') || 'virgil-storr';
+  window.finalAssetId = urlParams.get('utm_id') || '1311-delaware-20024';
+  
+  gtag('config', 'G-X889MYFV7L', {
+    'debug_mode': true, 
+    'custom_map': {
+        'dimension1': 'asset_id', 
+        'dimension2': 'source', 
+        'dimension3': 'content',
+        'dimension4': 'medium',
+        'dimension5': 'campaign'
+    }
+  });
+  
+  gtag('event', 'silo_view', {
+    'asset_id': window.finalAssetId,
+    'source': window.utmSource,
+    'method': 'Dossier Open',
+    'medium': 'webpage',
+    'content': window.utmContent,
+    'campaign': window.utmCampaign
+  });
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Engine: Neighborhood Dossier | 1311 Delaware Ave SW</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        :root {
+            --bg-color: #0A0A0A; 
+            --accent-gold: #C5A059; 
+            --accent-prestige: #FACC15; 
+            --text-main: #FFFFFF;
+            --text-muted: #A1A1AA;
+            --card-border: rgba(197, 160, 89, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+        }
+
+        .prestige-border {
+            border: 1px solid var(--card-border);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .prestige-border:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); }
+
+        @keyframes subtleScale {
+            from { opacity: 0; transform: scale(0.99); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+        }
+
+        .text-auth { 
+            color: rgba(197, 160, 89, 0.4); 
+            font-family: monospace;
+            letter-spacing: 0.15em;
+        }
+
+        .animate-entrance { animation: subtleScale 1.2s ease-out forwards; }
+        .letter-spacing-luxury { letter-spacing: 0.3em; }
+        .pulse-prestige { animation: pulse-gold 2s infinite; }
+        .tracking-geo { letter-spacing: 0.5em; }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col antialiased">
+
+    <header class="w-full py-8 px-10 flex justify-between items-center sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 border-t border-l border-[var(--accent-gold)] flex items-center justify-center">
+                <span class="text-[var(--accent-gold)] font-serif text-xl italic">TE</span>
+            </div>
+            <h1 class="text-[10px] letter-spacing-luxury text-[var(--accent-gold)] uppercase font-semibold">Truth Engine Prestige</h1>
+        </div>
+        <div class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-light">Established MMXXV</div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-20 max-w-6xl">
+
+        <section class="mb-24 text-center animate-entrance">
+            <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
+            <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
+                1311 Delaware Ave SW
+            </h2>
+            <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
+            <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
+                <p class="text-white text-xs font-light tracking-widest uppercase italic">
+                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Master of the Southwest Plateau</span>
+                </p>
+            </div>
+            <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
+                The dust from the January move has officially settled, and the rhythm of the Southwest waterfront is likely becoming your new baseline. As you watch the neighborhood shift from winter to spring along the Potomac, you’ve reached a milestone where the "new house" feel transitions into true local mastery. 
+                <br><br>
+                Consider this your Tactical Briefing for the streets surrounding your property.
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <button onclick="switchTab('section1')" id="tab-section1" class="prestige-border p-10 text-center group border-[var(--accent-gold)]">
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Narrative</span>
+                <h3 class="font-serif text-2xl text-white">Bones & Origin</h3>
+            </button>
+            <button onclick="switchTab('section2')" id="tab-section2" class="prestige-border p-10 text-center group">
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Lifestyle</span>
+                <h3 class="font-serif text-2xl text-white">Tactical Rotation</h3>
+            </button>
+            <button onclick="switchTab('section3')" id="tab-section3" class="prestige-border p-10 text-center group">
+                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Outlook</span>
+                <h3 class="font-serif text-2xl text-white">Seasonal Horizon</h3>
+            </button>
+        </div>
+
+        <div class="bg-white/[0.01] border border-white/5 p-10 md:p-20 min-h-[500px] relative animate-entrance">
+            
+            <div id="content-section1" class="content-section transition-all duration-700">
+                <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
+                    <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
+                </div>
+                <div class="flex flex-col gap-20">
+                    <div class="space-y-8">
+                        <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Core Footprint</h4>
+                        <div class="w-full max-w-2xl mx-auto py-16 bg-zinc-900/30 border border-white/5 flex flex-col items-center justify-center relative">
+                            <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
+                            <div class="space-y-6 text-center">
+                                <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                                    <span id="lat-value">38.8785°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                                </div>
+                                <div class="text-white font-light tracking-geo text-xl md:text-3xl">
+                                    <span id="lon-value">77.0163°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
+                                </div>
+                            </div>
+                            <div class="mt-16">
+                                <span class="text-zinc-600 text-[9px] uppercase tracking-[0.5em] font-light">Precision Verified Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8 max-w-3xl mx-auto">
+                        <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold text-center">Structural Provenance</h4>
+                        <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
+                            <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
+                                Your residence at River Park is a modernist anchor of the "New Southwest" movement. Designed by the renowned architect Charles M. Goodman in the early 1960s, the structure is celebrated for its distinctive aluminum grillwork and mid-century aesthetic.
+                            </p>
+                            <div class="h-8"></div> 
+                            <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
+                                Beyond the visible architecture lies the "Social Secret" of the quadrant: the site of the former Tiber Creek. Historically, this waterway connected the neighborhood directly to the foot of the Capitol, serving as a vital artery for the transport of materials used to build DC's historic monuments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
+                <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
+                    <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
+                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">Radius Lockdown</span>
+                </div>
+                <div class="space-y-12">
+                    <div class="group py-4">
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE PRIME</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">The Wharf [0.4 mi]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                                The district’s crown jewel for dining and entertainment. It is the undeniable center of gravity for the neighborhood, drawing visitors from across the DMV for its high-energy pier walks and rooftop views.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group py-4">
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE FOUNDATION</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">Station 4 [0.2 mi]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
+                                Located right at the Metro, this is the definitive Friday night ritual spot for Southwest residents. A reliable, upscale atmosphere that remains unbothered by the Wharf’s tourist crowds.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-12 px-10 bg-[var(--accent-prestige)]/5 border-y border-[var(--accent-prestige)]/20 relative overflow-hidden pulse-prestige">
+                        <div class="absolute top-0 right-0 p-4">
+                            <div class="w-2 h-2 rounded-full bg-[var(--accent-prestige)] animate-pulse"></div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-10">
+                            <div class="md:w-1/3">
+                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret</span>
+                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Grazie Grazie [0.5 mi]</h4>
+                            </div>
+                            <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
+                                The "Inner Club" sandwich gem. While tourists wait in hour-long lines at the sit-down restaurants, locals head here for the "8th Street" sub—a nod to Philly roots tucked into the waterfront's sleek exterior.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-section3" class="content-section hidden opacity-0 transition-all duration-700">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="space-y-12">
+                        <div>
+                            <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.3 mi</span>
+                            <h4 class="font-serif text-2xl text-white mt-2">SW Farmers Market</h4>
+                            <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The weekly heartbeat of the community at 4th and M St SW, where long-standing residents and newcomers converge every Saturday morning.</p>
+                        </div>
+                        <div class="pt-8 border-t border-white/5">
+                            <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
+                            <div class="mt-6 space-y-8">
+                                <div class="flex gap-6">
+                                    <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">March</div>
+                                    <div>
+                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Ireland at The Wharf</h5>
+                                        <p class="text-zinc-500 text-xs mt-1 italic">A riverside celebration of Irish culture with live music and dancing at the Waterfront.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-8">
+                                    <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">March</div>
+                                    <div>
+                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Bloomaroo® Festival</h5>
+                                        <p class="text-zinc-500 text-xs mt-2 italic">A family-friendly blossom festival featuring cherry blossom themed art and a fireworks show.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
+                        <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
+                        <div class="mt-8 space-y-6">
+                            <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Southwest Library and surrounding green zones continue to evolve as the final phases of the waterfront development bridge the gap between historic blocks and the commercial pier."</p>
+                            <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
+                                <p class="text-white text-sm mt-2">Expect high-street retail density to reach full equilibrium by Q4 2026, centering on the 4th Street corridor development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-24 text-center pb-20">
+            <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
+                <a href="https://truthengine.io/placeholder" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+                    <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
+                </a>
+
+                <a id="dynamic-consult-btn" href="#" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
+                    <span class="relative text-black group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Consult The Advisor.</span>
+                </a>
+
+                <a id="dynamic-license-btn" href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
+                    <span class="text-white group-hover:text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em]">License Truth Engine™</span>
+                </a>
+            </div>
+
+            <div class="space-y-4">
+                <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
+                <p class="text-[9px] text-zinc-600 uppercase tracking-[0.5em] font-light">Confidential Intelligence // Authorized Access Only</p>
+                <div class="mt-4 flex justify-center">
+                    <span id="auth-display" class="text-auth text-[7px] uppercase tracking-widest">Source-ID: truthengine.io/briefing/auth_1311-delaware-20024</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        function switchTab(tabName) {
+            const tabMap = {
+                'section1': 'Bones & Origin',
+                'section2': 'Tactical Rotation',
+                'section3': 'Seasonal Horizon'
+            };
+
+            gtag('event', 'dossier_dissection', { 
+                'asset_id': window.finalAssetId,
+                'source': window.utmSource,
+                'content': window.utmContent,
+                'campaign': window.utmCampaign,
+                'medium': 'webpage',
+                'method': tabMap[tabName] || tabName 
+            });
+
+            document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('border-[var(--accent-gold)]');
+                btn.classList.add('border-white/5');
+            });
+            document.getElementById(`tab-${tabName}`).classList.remove('border-white/5');
+            document.getElementById(`tab-${tabName}`).classList.add('border-[var(--accent-gold)]');
+
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('opacity-100');
+                section.classList.add('opacity-0');
+            });
+
+            const activeSection = document.getElementById(`content-${tabName}`);
+            activeSection.classList.remove('hidden');
+            setTimeout(() => {
+                activeSection.classList.remove('opacity-0');
+                activeSection.classList.add('opacity-100');
+            }, 50);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const authDisplay = document.getElementById('auth-display');
+            if (authDisplay) {
+                authDisplay.innerText = `Source-ID: truthengine.io/briefing/auth_${window.finalAssetId}`;
+            }
+
+            const commonParams = {
+                'asset_id': window.finalAssetId,
+                'source': window.utmSource,
+                'content': window.utmContent,
+                'campaign': window.utmCampaign,
+                'medium': 'webpage'
+            };
+
+            const consultBtn = document.getElementById('dynamic-consult-btn');
+            if(consultBtn) {
+                const trackingQuery = `?utm_source=${window.utmSource}&utm_medium=webpage&utm_campaign=${window.utmCampaign}&utm_content=${window.utmContent}&utm_id=${window.finalAssetId}`;
+                consultBtn.setAttribute('href', `https://calendly.com/mejia-pas/30min${trackingQuery}`);
+                consultBtn.setAttribute('target', '_blank');
+                consultBtn.addEventListener('mousedown', () => {
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Consult Intent' });
+                });
+            }
+
+            const licenseBtn = document.getElementById('dynamic-license-btn');
+            if(licenseBtn) {
+                licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing: ${window.finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
+                licenseBtn.addEventListener('mousedown', () => {
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'License Intent' });
+                });
+            }
+
+            const attestBtn = document.querySelector('a[href*="truthengine.io/placeholder"]');
+            if(attestBtn) {
+                const reviewUrl = "https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY";
+                attestBtn.setAttribute('href', reviewUrl);
+                attestBtn.setAttribute('target', '_blank');
+                attestBtn.addEventListener('mousedown', () => {
+                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Review Intent' });
+                });
+            }
+        });
+
+        let scrollTracked = false;
+        window.addEventListener('scroll', () => {
+          if (!scrollTracked && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            gtag('event', 'dossier_dissection', {
+              'asset_id': window.finalAssetId,
+              'source': window.utmSource,
+              'medium': 'webpage',
+              'method': 'full_dossier_read',
+              'transport_type': 'beacon'
+            });
+            scrollTracked = true; 
+          }
+        });
+    </script>
+</body>
+</html>
